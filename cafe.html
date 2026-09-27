@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bloom & Co. Café</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #FAF6EF;
+    --ink: #2B2420;
+    --brown: #6F4E37;
+    --gold: #C89B3C;
+    --muted: #8A7F73;
+    --font-head: "Playfair Display", serif;
+    --font-body: "Inter", sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    border-bottom: 1px solid #e8e0d3;
+  }
+
+  .brand { font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; }
+
+  nav ul { list-style: none; display: flex; gap: 24px; }
+  nav a { text-decoration: none; color: var(--ink); font-size: 0.95rem; }
+  nav a:hover { color: var(--brown); }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 90px 24px 70px;
+  }
+
+  .hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    margin-bottom: 16px;
+  }
+
+  .hero p {
+    color: var(--muted);
+    max-width: 46ch;
+    margin: 0 auto 28px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--brown);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+  }
+  .btn:hover { background: #5a3d2b; }
+
+  /* Menu */
+  section { padding: 60px 0; }
+  .section--alt { background: #F1E9DA; }
+
+  h2 {
+    font-family: var(--font-head);
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+
+  .menu-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 22px;
+    border: 1px solid #ece4d6;
+  }
+
+  .menu-item h3 {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .menu-item .price {
+    color: var(--gold);
+    font-weight: 600;
+    float: right;
+  }
+
+  .menu-item p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 6px;
+  }
+
+  /* Hours & Contact */
+  .info {
+    text-align: center;
+  }
+
+  .info p { color: var(--muted); margin-bottom: 6px; }
+
+  footer {
+    text-align: center;
+    padding: 28px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid #e8e0d3;
+  }
+
+  @media (max-width: 520px) {
+    nav ul { gap: 14px; font-size: 0.85rem; }
+    header { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">Bloom & Co.</div>
+    <nav>
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#hours">Hours</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Good coffee, slow mornings.</h1>
+      <p>A small neighborhood café serving fresh coffee, pastries, and a quiet place to sit for a while.</p>
+      <a href="#menu" class="btn">View Menu</a>
+    </div>
+  </section>
+
+  <section id="menu" class="section--alt">
+    <div class="container">
+      <h2>Our Menu</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <h3>Flat White <span class="price">$4.50</span></h3>
+          <p>Double espresso, steamed milk, velvety microfoam.</p>
+        </div>
+        <div class="menu-item">
+          <h3>Almond Croissant <span class="price">$3.75</span></h3>
+          <p>Buttery, flaky, filled with almond cream.</p>
+        </div>
+        <div class="menu-item">
+          <h3>Iced Matcha <span class="price">$5.00</span></h3>
+          <p>Ceremonial-grade matcha over oat milk and ice.</p>
+        </div>
+        <div class="menu-item">
+          <h3>Sourdough Toast <span class="price">$6.50</span></h3>
+          <p>House sourdough, whipped ricotta, local honey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hours" class="info">
+    <div class="container">
+      <h2>Hours</h2>
+      <p>Monday – Friday: 7:00 AM – 5:00 PM</p>
+      <p>Saturday – Sunday: 8:00 AM – 4:00 PM</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section--alt info">
+    <div class="container">
+      <h2>Visit Us</h2>
+      <p>123 Willow Street, Riverside</p>
+      <p>hello@bloomandco.example</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Bloom & Co. Café. Built with HTML &amp; CSS.</p>
+  </footer>
+
+</body>
+</html>
